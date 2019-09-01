@@ -1,6 +1,6 @@
 FROM wql425/gradle:latest
 MAINTAINER Darrell
-LABEL name="jenkins" version="2.121.1" description="Jenkins"
+LABEL name="jenkins" version="latest" description="Jenkins"
 
 # Install Git Client
 RUN yum install -y git && yum clean all
@@ -9,7 +9,7 @@ RUN yum install -y git && yum clean all
 ENV JENKINS_HOME=/var/jenkins_home
 WORKDIR /
 
-RUN curl -o jenkins.war http://mirrors.shu.edu.cn/jenkins/war-stable/2.121.1/jenkins.war
+RUN curl -o jenkins.war http://mirrors.jenkins-ci.org/war/latest/jenkins.war
 
 VOLUME /var/jenkins_home
 EXPOSE 8080
